@@ -1,0 +1,24 @@
+app:
+  name: Coastline
+  description: API-ware in go version
+
+server:
+  port: 9989
+  logging-level: DEBUG
+
+db:
+  type: mysql
+  url: admin:WahleMySql0097@tcp(database-1.cmkdlofe8xir.eu-central-1.rds.amazonaws.com:3306)/whale?parseTime=true
+  max-open-conns: 0
+  max-idle-conns: 0
+
+upstream:
+  url:
+    auth: "http://qa-go-uc-service:8080/uc/public/auth/verify"
+    user-info: "http://qa-go-uc-service:8080/uc/public/user/info/{uid}"
+
+monitor:
+  port: 19002
+
+
+
